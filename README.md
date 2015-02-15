@@ -1,7 +1,6 @@
 ﻿# iSoft
-hii guys this is just a trial
-so plz write ur names and id in this file no styling yet :D 
-
+*go beyond expectations :) *
+ 
 | Name | ID 
 |--------- |-------|
 |myriame ayman nabil | 28-2180 |

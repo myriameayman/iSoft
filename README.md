@@ -1,5 +1,5 @@
 ﻿# iSoft
-*go beyond expectations :) *
+*go beyond expectations :)*
  
 | Name | ID 
 |--------- |-------|

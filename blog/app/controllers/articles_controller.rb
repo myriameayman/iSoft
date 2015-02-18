@@ -15,17 +15,20 @@ end
 
 
    def index
-    @articles = Article.all
+    @articles = Article.all 
   end
 
 
   def show
     @article = Article.find(params[:id])
+ 
+
   end
 
 	def new 
 	
 	@article = Article.new
+  @categories = Category.all 
 	end
 	def create
   @article = Article.new(article_params)

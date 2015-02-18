@@ -8,3 +8,12 @@
   
  <% end %>
 <%= link_to 'Back', articles_path %>
+
+<h1> hal mn mogib </h1>
+
+  <select name="user_id">
+      <%= @categories.each do |user| %>
+        <option value="<%= user.name %>"><%= user.name %></option>
+      <% end %>
+      <
+    </select>

@@ -9,10 +9,21 @@
 </p>
  
 <h2>Comments</h2>
-<%= render @article.comments %>
+<% @article.comments.each do |c| %>
+<%= c.body %> 
+<%end%> 
+<h3>Replies</h3>
+
+  <% @article.comments.each do |c| %>
+  <% c.replies.each do |r| %> 
+    <tr>
+      <td><%= r.text %></td>
+ </tr>
+ <% end %>
+ <% end %>
  
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
  
-<%= link_to 'Edit Article', edit_article_path(@article) %> |
+<%= link_to 'Edit Article', edit_article_path(@article) %> 
 <%= link_to 'Back to Articles', articles_path %>

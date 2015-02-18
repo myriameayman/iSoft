@@ -7,7 +7,10 @@ Rails.application.routes.draw do
    root 'welcome#index'
 
    resources :articles do
-    resources :comments 
+   resources :comments 
+   
+    end
+    resources :categories do 
     end
 
 

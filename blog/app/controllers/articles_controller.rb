@@ -28,13 +28,17 @@ end
 	def new 
 	
 	@article = Article.new
-  @categories = Category.all 
+  @categories = Category.all
+
 	end
 	def create
   @article = Article.new(article_params)
- 
   if @article.save
   redirect_to @article
+  l = Link.new 
+  l.category_id = params[:category_id] 
+  l.article_id = @article.id 
+  l.save 
 else 
 	render 'new'
 end
@@ -60,7 +64,6 @@ private
   def article_params
     params.require(:article).permit(:title, :text)
   end
-
 
 
 end

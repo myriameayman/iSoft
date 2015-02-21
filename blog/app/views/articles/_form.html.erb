@@ -24,6 +24,12 @@
     <%= f.text_area :text %>
   </p>
  
+  <select name="category_id" >
+      <%= Category.all.each do |c| %>
+        <option  value="<%= c.name %>" ><%= c.name %></option> 
+  
+      <% end %>
+   
   <p>
     <%= f.submit %>
   </p>

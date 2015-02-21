@@ -7,8 +7,15 @@ Rails.application.routes.draw do
    root 'welcome#index'
 
    resources :articles do
+<<<<<<< HEAD
     resources :comments 
     #resources :replyToComments-
+=======
+   resources :comments 
+   
+    end
+    resources :categories do 
+>>>>>>> 291a06e3463ba7064524afa58707ec20477f0b00
     end
  
 

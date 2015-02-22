@@ -43,7 +43,7 @@ group :development, :test do
   gem 'spring'
   
   gem 'bcrypt-ruby', :require => 'bcrypt'
-
+  #gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
   gem 'paperclip'
   gem 'aws-sdk'
 end

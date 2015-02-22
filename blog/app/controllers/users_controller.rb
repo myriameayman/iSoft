@@ -1,14 +1,22 @@
 class UsersController < ApplicationController  
 	before_filter :login_required, :only => :my_account
-  
+    before_filter :set_counter
+  def set_counter
+     @k= 4
+  end
+    
   	def index
   		redirect_to(:action => 'new')
   	end
     
-
+    def show
+      redirect_to(:action => 'my_account')
+    end
     
     def new  
-      @user = User.new  
+      @user = User.new
+      @article = Article.new  
+      @comment = @article.comments.new 
     end 
 
     # POST users
@@ -28,7 +36,7 @@ class UsersController < ApplicationController
   def process_login  
 
     user = User.authenticate(params[:email], params[:password])  
-  
+    
    if user  
     
       session[:user_id] = user.id  
@@ -41,13 +49,19 @@ class UsersController < ApplicationController
    
       render "login"  
    
-    end  
+    end 
+
+ 
 
   end  
   
-  def my_account
-     
+  def my_account 
+
+               
         @user=User.find(session[:user_id])
+        @article = Article.new
+        @comment = @article.comments.new 
+        @reply = Reply.new
 
       if session[:user_id] != nil
         #@user = User.find(session[:user_id])

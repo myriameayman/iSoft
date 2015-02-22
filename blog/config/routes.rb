@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 get 'users/new'
+get 'users/show'
 
   #get 'welcome/index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base  
   #attr_accessible :email, :password_hash, :password_salt, :password, :password_confirmation
   #require 'bcrypt'
+  has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :replies, dependent: :destroy
   attr_accessor :password,:password_confirmation
 
   #attr_accessor :password_salt

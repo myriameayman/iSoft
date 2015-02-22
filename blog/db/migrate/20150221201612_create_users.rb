@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password_hash
       t.string :password_salt
-      t.attachement :avatar
+
 
       t.timestamps null: false
     end

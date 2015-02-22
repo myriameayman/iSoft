@@ -1,8 +1,11 @@
 class UsersController < ApplicationController  
 	before_filter :login_required, :only => :my_account
+  
   	def index
   		redirect_to(:action => 'new')
   	end
+    
+
     
     def new  
       @user = User.new  
@@ -44,8 +47,10 @@ class UsersController < ApplicationController
   
   def my_account
      
+        @user=User.find(session[:user_id])
+
       if session[:user_id] != nil
-     
+        #@user = User.find(session[:user_id])
          @sessEmail = User.find(session[:user_id]).email
          @sessName = User.find(session[:user_id]).name
      

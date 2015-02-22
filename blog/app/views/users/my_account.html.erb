@@ -3,5 +3,40 @@
 
 <p>Your name is <%= @sessName %>
 
-<br>
+
+
+
+<p>
+  <strong>Welcome:</strong>
+  <%= @user.name %>
+</p>
+ 
+
+ <% i = 0 %>
+
+
+<% @user.articles.each do |c| %>
+	<div class="post">
+		<%= c.title %><br>
+		<%= c.text %><br>
+		<% j=0 %>
+		<% @c.comments.each do |x| %>
+			<div class = "comment">
+				<%= c.body %><br>
+				<% j =j+1 %>
+				<% if (j==2) %>
+					<% break %>
+				<%end%>
+			<div>
+		<%end%>	
+		<% i =i+1 %>
+		<% if (i==2) %>
+			<% break %>
+		<%end%>
+	<div>	 
+<%end%> 
+
+<%= render 'comments/form' %>
+
+
 <a href="log_out">Log out</a>

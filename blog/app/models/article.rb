@@ -4,4 +4,9 @@ class Article < ActiveRecord::Base
   has_many :categories, :through => :links
   validates :title, presence: true,
                     length: { minimum: 5 }
-                end
+
+  belongs_to :user
+end
+
+              
+

@@ -21,6 +21,15 @@ end
 
   def show
     @article = Article.find(params[:id])
+    Link.all.each do |l|
+      if l.article_id = @article.id 
+        Category.all.each do |c| 
+          if c.id = l.category_id 
+            @category = c 
+          end 
+        end 
+      end 
+    end 
  
 
   end

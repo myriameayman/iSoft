@@ -8,6 +8,8 @@
   <%= @article.text %>
 </p>
  
+ <p> category </p>
+<%= @category.name %>  
 <h2>Comments</h2>
 <% @article.comments.each do |c| %>
 <%= c.body %> 
@@ -21,7 +23,6 @@
  </tr>
  <% end %>
  <% end %>
- 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
  

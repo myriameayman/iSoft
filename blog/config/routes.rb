@@ -9,6 +9,8 @@ get 'users/show'
   # You can have the root of your site routed with "root"
    root 'welcome#index'
   
+   
+  
   #get "sign_up" => "users#new", :as => "sign_up"  
   #resources :users
   get "log_in" => "users#login", :as => "log_in"  

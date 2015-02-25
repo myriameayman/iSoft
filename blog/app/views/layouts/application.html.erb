@@ -10,5 +10,16 @@
 
 <%= yield %>
 
+<<<<<<< HEAD
 </body>
+=======
+	  <%= csrf_meta_tags %>
+	</head>
+	<body style="background-image:url('/assets/note2.jpg');">
+		<%flash.each do |name, msg|%>
+			<%=content_tag :div,msg,:id=>"flash#{name}"%>
+		<%end%>
+		<%=yield%>
+	</body>
+>>>>>>> e65ec85ae19e02d2fd6c6d9df6fab1ab439c6085
 </html>

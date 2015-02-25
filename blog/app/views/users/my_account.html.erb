@@ -1,0 +1,56 @@
+<!-- app/views/users/my_account.html.erb -->
+<h1>Account Info</h1>
+
+<p>Your name is <%= @sessName %>
+<p>
+  <strong>Welcome:</strong>
+  <%= @user.name %>
+</p>
+
+
+<body>
+
+<div class="post">
+
+ <%= render 'articles/form' %>	
+ <%= render 'categories/form' %>	
+<br>
+<br>
+</div>
+	
+ <% i = 0 %>
+
+
+<% @user.articles.each do |c| %>
+	<div class="post">
+		<%= c.title %><br>
+		<%= c.text %><br>
+	
+		<br>
+		<% c.comments.each do |x| %>
+			<div class = "comment">
+				<%= x.body %><br>
+				<div class = "reply">
+					<h6> Replies </h6>
+				  	
+				  		<% x.replies.each do |r| %> 
+				    	<tr>
+				    	  <td><%= r.text %></td>
+				 		</tr>
+				 	<% end %>
+				</div>
+			</div>
+		<%end%>	
+		<br>
+	</div>
+	<h6>Add a comment:</h6>
+		<%= render 'comments/form' %>
+	<br>
+	<br>
+	<% i =i+1 %>
+		
+<%end%> 
+
+
+</body>
+<a href="log_out">Log out</a>

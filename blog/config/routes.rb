@@ -5,6 +5,22 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
+<<<<<<< HEAD
+=======
+  
+   
+  
+  #get "sign_up" => "users#new", :as => "sign_up"  
+  #resources :users
+  get "log_in" => "users#login", :as => "log_in"  
+  get "my_account" => "users#my_account", :as => "my_account"
+  get "log_out" => "users#logout", :as => "log_out"  
+  get "sign_up" => "users#new", :as => "sign_up"  
+ 
+  resources :users do 
+ post 'process_login', :on => :collection 
+ end
+>>>>>>> e65ec85ae19e02d2fd6c6d9df6fab1ab439c6085
 
    resources :articles do
    resources :comments 

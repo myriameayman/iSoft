@@ -17,7 +17,11 @@ get 'users/show'
   get "my_account" => "users#my_account", :as => "my_account"
   get "log_out" => "users#logout", :as => "log_out"  
   get "sign_up" => "users#new", :as => "sign_up"  
- 
+  get  '/welcome/index.html.erb' , to: 'welcome#index', as: 'iSoft'
+  get  '/login.html.erb' , to: 'users#login', as: 'SIGN_IN'
+  get  '/adel.html.erb' , to: 'profiles#adel', as: 'PROFILES' 
+  get  '/index.html.erb' , to: 'articles#index', as: 'Our_Blog'
+  get  '/new.html.erb' , to: 'users#new', as: 'Sign_Up'  
   resources :users do 
  post 'process_login', :on => :collection 
  end

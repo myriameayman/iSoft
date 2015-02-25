@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
- # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
  
   def index
     @articles = Article.all
@@ -35,30 +35,23 @@ end
   end
 
 	def new 
-	   
-     @user = User.find(session[:user_id])
-	   @article = Article.new
-     @comment = Comment.new
-     @categories = Category.all
+	
+	@article = Article.new
+  @categories = Category.all
 
 	end
-
 	def create
-    @comment = Comment.new
-    @user = User.find(session[:user_id])
-    @article = Article.new(article_params)
-    if @article.save
-      @article = @user.articles.create(article_params)
-       redirect_to '/users/my_account'
-       #redirect_to @article
-       l = Link.new 
-       l.category_id = params[:category_id] 
-       l.article_id = @article.id 
-       l.save 
-    else 
-	     render 'new'
-    end
-  end
+  @article = Article.new(article_params)
+  if @article.save
+  redirect_to @article
+  l = Link.new 
+  l.category_id = params[:category_id] 
+  l.article_id = @article.id 
+  l.save 
+else 
+	render 'new'
+end
+end
 
  def update
     @article = Article.find(params[:id])

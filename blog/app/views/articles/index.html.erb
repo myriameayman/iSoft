@@ -1,29 +1,38 @@
+
+<body>
+
+
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>The Isoft Blog</h1>
+    <p> </p> 
+  </div>
+
 <h1>Listing articles</h1>
 <%= link_to 'New article', new_article_path %>
  
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="2"></th>
-  </tr>
+
+  <div class="row">
+    <div class="col-sm-4">
  
   <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) 
+    
+      <h3><%= article.title %></h3>
+      <p><%= article.text %></p>
+      <%= link_to 'Show', article_path(article) %>
+      <%= link_to 'Edit', edit_article_path(article)%>
 
-
-      %></td>
-
-  <td><%= link_to 'Destroy', article_path(article),
+  <%= link_to 'Destroy', article_path(article),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' } %>
 
-    </tr>
+    </div>
+
   <% end %>
-</table>
 
+
+
+      
+    
 

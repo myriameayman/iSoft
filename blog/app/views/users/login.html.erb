@@ -1,0 +1,14 @@
+
+<!-- app/views/users/login.html.erb -->
+<h1>Log in</h1>
+<%= form_tag :action => 'process_login' %>
+<p> 
+<%= label_tag :email %><br /> 
+<%= text_field_tag :email, params[:email] %> 
+</p> 
+<p> 
+<%= label_tag :password %><br /> 
+<%= password_field_tag :password %> 
+</p>
+
+<%= submit_tag "log in"%>

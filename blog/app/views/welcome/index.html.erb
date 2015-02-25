@@ -68,10 +68,41 @@
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
+html,
+body {
+    height: 100%;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+footer {
+    margin: 50px 0;
+}
 @media (min-width: 768px) {
   /* Navbar positioning foo */
   .navbar-wrapper {
     margin-top: 20px;
+    background-color: transparent;
   }
   .navbar-wrapper .container {
     padding-right: 15px;
@@ -107,7 +138,7 @@
 
 
   </style>
-  <body>
+  <body >
 
   <div class="top-bar-container contain-to-grid show-for-medium-up">
 <div class="row">
@@ -145,7 +176,9 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('note2.jpg');"></div>
+                <div class="fill" style="background-image:url('assets/note2.jpg');">
+                	<h1> Hello world </h1>
+                </div>
                 <div class="carousel-caption">
                     <h2 style="color:white" >Welcome to iSoft!</h2>
                     <h3 style="color:white">Your free blog</h3>
@@ -154,7 +187,7 @@
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('note1.jpg');"></div>
+                <div class="fill" style="background-image:url('assets/note1.jpg');"></div>
                 <div class="carousel-caption">
                     <h2 style="color:white">Free Articles</h2>
                     <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>

@@ -7,7 +7,7 @@ get 'users/show'
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+   root 'profiles#adel'
   
    
   
@@ -21,7 +21,14 @@ get 'users/show'
   get  '/login.html.erb' , to: 'users#login', as: 'SIGN_IN'
   get  '/adel.html.erb' , to: 'profiles#adel', as: 'PROFILES' 
   get  '/index.html.erb' , to: 'articles#index', as: 'Our_Blog'
-  get  '/new.html.erb' , to: 'users#new', as: 'Sign_Up'  
+  get  '/new.html.erb' , to: 'users#new', as: 'Sign_Up' 
+  get  '/myriame.html.erb' , to: 'profiles#myriame', as: 'Myriame_Ayman'
+  get  '/ebrahim.html.erb' , to: 'profiles#ebrahim', as: 'ebrahim_elgaml'
+  get  '/adel.html.erb' , to: 'profiles#adel', as: 'Ahmed_Adel'
+  get  '/mariam.html.erb' , to: 'profiles#mariam', as: 'Mariam_Talaat'
+  get  '/maha.html.erb' , to: 'profiles#maha', as: 'Maha_Talaat' 
+  get  '/ismail.html.erb' , to: 'profiles#ismail', as: 'Ahmed_Amr'
+  get  '/renad.html.erb' , to: 'profiles#renad', as: 'Renad_Ebrahim'  
   resources :users do 
  post 'process_login', :on => :collection 
  end

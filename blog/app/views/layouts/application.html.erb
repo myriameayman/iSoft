@@ -10,10 +10,11 @@
 
 	  <%= csrf_meta_tags %>
 	</head>
-	<body style="background-image:url('/assets/note2.jpg');">
+	<body >
 		<%flash.each do |name, msg|%>
 			<%=content_tag :div,msg,:id=>"flash#{name}"%>
 		<%end%>
+		<%= render 'shared/navbar' %> 
 		<%=yield%>
 	</body>
 </html>

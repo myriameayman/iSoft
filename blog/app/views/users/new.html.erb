@@ -10,6 +10,7 @@
 
  .html {
           background: url(/assets/note1.jpg) no-repeat center center fixed;
+
         }
     .body {
         padding-top: 70px;
@@ -148,7 +149,7 @@
 </div>
 
   <%= form_for @user do |f| %>  
-
+<div>
   <% if @user.errors.any? %>  
 
     <div class="error_messages">  
@@ -161,7 +162,7 @@
         <% for message in @user.errors.full_messages %>  
 
           <li><%= message %></li>  
-
+</div>
         <% end %>  
 
       </ul>  

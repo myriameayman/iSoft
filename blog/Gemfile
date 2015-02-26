@@ -48,6 +48,7 @@ group :development, :test do
   gem 'aws-sdk'
   gem 'bootstrap-sass', '~> 3.3.3'
   gem 'autoprefixer-rails'
+  
 
 
 

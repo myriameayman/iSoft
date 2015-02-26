@@ -1,9 +1,4 @@
 
-<%= link_to 'My Blog', controller: 'articles' %><br>
-<%= link_to 'Sign Up', controller: 'users' %> <br>
-<%= link_to 'Log in', 'log_in' %>
-
-
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
@@ -67,6 +62,45 @@
    
 /* RESPONSIVE CSS
 -------------------------------------------------- */
+/*!
+ * Start Bootstrap - Full Slider HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+html,
+body {
+    height: 100%;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+footer {
+    margin: 50px 0;
+}
+section{
+	background-image: transparent;
+}
 
 html,
 body {
@@ -148,15 +182,17 @@ footer {
                 <section class="top-bar-section">
                   <ul class="title-area">
                     <li class="name">
-                        <a href="Home.html" style="color:white"><b>iSoft</b> </a>
+                        <a href="welcome/index.html.erb" style="color:white"><b>iSoft</b> </a>
                           <!--<img src="img/Isoft.jpg"></a>-->
                     </li>
                   </ul>
 
                   <ul id="menu-main-menu-1" class="top-bar-menu right">
                     
-                    <li class="divider"></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="Sign%20In.html" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'Sign%20In.html', 'Approach']);" >Sign In</a></li>
-                    <li class="divider"></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="Profiles2.html" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'Profiles2.html', 'Portfolio']);" >Profiles</a></li>
+                    <li class="divider"></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="login.html.erb" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'login.html.erb', 'Approach']);" >Sign In</a></li>
+                    <li class="divider"></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="adel.html.erb" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'adel.html.erb', 'Portfolio']);" >Profiles</a></li>
+                    <li class="divider"></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="new.html.erb" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'new.html.erb', 'Portfolio']);" >Sign Up</a></li>
+                    <li class="divider"></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="index.html.erb" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'index.html.erb', 'Portfolio']);" >Our Blog</a></li>
                     
                   </ul>
                 </section>
@@ -176,9 +212,9 @@ footer {
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('assets/note2.jpg');">
-                	<h1> Hello world </h1>
-                </div>
+
+                <div class="fill" style="background-image:url('assets/note2.jpg');"></div>
+
                 <div class="carousel-caption">
                     <h2 style="color:white" >Welcome to iSoft!</h2>
                     <h3 style="color:white">Your free blog</h3>
@@ -216,4 +252,5 @@ footer {
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     </body>
+
 </html>

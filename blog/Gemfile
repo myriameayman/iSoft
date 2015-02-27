@@ -9,11 +9,12 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-  gem 'rails_serve_static_assets',github: 'heroku/rails_serve_static_assets'
-end
+#group :production do
+  #gem 'pg'
+  #gem 'rails_12factor'
+ # gem 'rails_serve_static_assets',github: 'heroku/rails_serve_static_assets'
+#end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,7 +34,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-Bundler.require(*Rails.groups(assets: %w(development test production)))
+#Bundler.require(*Rails.groups(assets: %w(development test production)))
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

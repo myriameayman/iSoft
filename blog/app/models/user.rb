@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   #attr_accessor :password_salt
   before_save { self.email = email.downcase }
 
-  validates :email, :presence =>true
+  #validates :email, :presence =>true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -24,9 +24,9 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password
 
-  validates_presence_of :password, :on => :create
+  #validates_presence_of :password, :on => :create
 
-  validates_presence_of :email
+  #validates_presence_of :email
 
   #validates_uniqueness_of :email
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"

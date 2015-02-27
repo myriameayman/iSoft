@@ -1,12 +1,9 @@
 <h1>New Article</h1>
 
- 
+ <p>Your name is <%= @sessName %> <br>
 <%= render 'form' %>
  
-<%= form_for :article , url: articles_path do |f|%>
-  
-  
- <% end %>
+
  <%= render 'categories/form' %>	
 
 <%= link_to 'Back', articles_path %>

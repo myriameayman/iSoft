@@ -59,8 +59,9 @@ class UsersController < ApplicationController
 
                
         @user=User.find(session[:user_id])
-        @article = Article.new
+        @article = @user.articles.new
         @comment = @article.comments.new 
+
         @reply = Reply.new
 
       if session[:user_id] != nil

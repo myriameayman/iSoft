@@ -4,6 +4,20 @@ class ArticlesController < ApplicationController
  
   def index
     @articles = Article.all
+    @user=User.find(session[:user_id])
+    @comment = Comment.new
+    @article = @user.articles.new
+      if session[:user_id] != nil
+        #@user = User.find(session[:user_id])
+         @sessEmail = User.find(session[:user_id]).email
+         @sessName = User.find(session[:user_id]).name
+     
+      else
+        @sessEmail = "Guest"
+        @sessName = "Guest"
+      
+      end
+    
   end
  
 def destroy
@@ -12,11 +26,6 @@ def destroy
  
   redirect_to articles_path
 end   
-
-
-   def index
-    @articles = Article.all 
-  end
 
 
   def show
@@ -37,18 +46,21 @@ end
 	def new 
 	   
      @user = User.find(session[:user_id])
-	   @article = Article.new
+	   @article = @user.articles.new
      @comment = Comment.new
      @categories = Category.all
 
 	end
 
 	def create
+
     @comment = Comment.new
     @user = User.find(session[:user_id])
-    @article = Article.new(article_params)
+    
+    @article = @user.articles.new(article_params)
+    
     if @article.save
-      @article = @user.articles.create(article_params)
+     
        redirect_to '/users/my_account'
        #redirect_to @article
        l = Link.new 

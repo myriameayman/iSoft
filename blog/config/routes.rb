@@ -21,16 +21,21 @@ get 'users/show'
   get  '/login.html.erb' , to: 'users#login', as: 'SIGN_IN'
   get  '/adel.html.erb' , to: 'profiles#adel', as: 'PROFILES' 
   get  '/index.html.erb' , to: 'articles#index', as: 'Our_Blog'
-  get  '/new.html.erb' , to: 'users#new', as: 'Sign_Up'  
+  get  '/new.html.erb' , to: 'users#new', as: 'Sign_Up'
+  get  '/articles/index.html.erb' , to: 'articles#index', as: 'Blog'    
+  
   resources :users do 
- post 'process_login', :on => :collection 
- end
+    post 'process_login', :on => :collection 
+  end
 
    resources :articles do
    resources :comments 
    
     end
     resources :categories do 
+    end
+
+    resources :comments do 
     end
 
 

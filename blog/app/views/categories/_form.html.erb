@@ -1,4 +1,24 @@
-<%= form_for([Category.new]) do |f| %>
+<% @category = Category.new %>
+<%= form_for(@category) do |f| %>
+	<% if @category.errors.any? %>  
+
+    <div class="error_messages">  
+
+      <h2>Form is invalid</h2>  
+
+      <ul>  
+
+        <% for message in @category.errors.full_messages %>  
+
+          <li><%= message %></li>  
+
+        <% end %>  
+
+      </ul>  
+
+    </div>  
+
+  <% end %>
   <p>
     <%= f.label :category %><br>
     <%= f.text_field :name %>

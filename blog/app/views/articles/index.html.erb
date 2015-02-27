@@ -1,29 +1,49 @@
-<h1>Listing articles</h1>
-<%= link_to 'New article', new_article_path %>
- 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="2"></th>
-  </tr>
- 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Articles</title>
+</head>
+<body>
+<p>Your name is <%= @sessName %> <br>
 
 
-      %></td>
 
-  <td><%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+<% if (@sessName !=nil) %> 
+    <div class="post">
 
-    </tr>
+     <%= render 'articles/form' %>  
+     <%= render 'categories/form' %>  
+    <br>
+    <br>
+    </div>
   <% end %>
-</table>
+      
+  <%= link_to 'New article', new_article_path %>
+    <% @articles.each do |c| %>
+      <div class="post">
+        <% if (c.user != nil  ) %>
+          Title: <%= c.title %>  By: <%= c.user.email %><br>
+      
+        <% end %>
+        <%= c.text %><br>
+        <br>
+        <% c.comments.each do |x| %>
+          <div class = "comment">
+            <%= x.body %><br>
+          </div>
+        <%end%> 
+      </div>
+      <% if (@sessName != "Guest") %>
+        <h6>Add a comment:</h6>
+        <%= render 'comments/form' %>
+      <% end %>
+      <br>
+      <br>
+
+      
+    <%end%> 
 
 
+
+</body>
+</html>

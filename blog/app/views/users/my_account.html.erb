@@ -1,56 +1,58 @@
 <!-- app/views/users/my_account.html.erb -->
-<h1>Account Info</h1>
+<!DOCTYPE html>
+<html>	
+	<head>
+		<header>
+			<a href="articles/index.html.erb">Profiles</a>
+			<a href="log_out">Log out</a>
+			<%= link_to 'New article', new_article_path %>
+		</header>
+		<title>My profilr</title>
+		<h1>Account Info</h1>
 
-<p>Your name is <%= @sessName %>
-<p>
-  <strong>Welcome:</strong>
-  <%= @user.name %>
-</p>
+		<p>Your name is <%= @sessName %>
+		<p>
+		  <strong>Welcome:</strong>
+		  <%= @user.name %>
+		</p>
+	</head>
+	<body>
 
+		<div class="post">
 
-<body>
-
-<div class="post">
-
- <%= render 'articles/form' %>	
- <%= render 'categories/form' %>	
-<br>
-<br>
-</div>
-	
- <% i = 0 %>
-
-
-<% @user.articles.each do |c| %>
-	<div class="post">
-		<%= c.title %><br>
-		<%= c.text %><br>
-	
+		 <%= render 'articles/form' %>	
+		 <%= render 'categories/form' %>	
 		<br>
-		<% c.comments.each do |x| %>
-			<div class = "comment">
-				<%= x.body %><br>
-				<div class = "reply">
-					<h6> Replies </h6>
-				  	
-				  		<% x.replies.each do |r| %> 
-				    	<tr>
-				    	  <td><%= r.text %></td>
-				 		</tr>
-				 	<% end %>
-				</div>
+		<br>
+		</div>
+			
+
+
+		<% @user.articles.each do |c| %>
+			<div class="post">
+				<%= c.title %><br>
+				<%= c.text %><br>
+			
+				<br>
+				<% c.comments.each do |x| %>
+					<div class = "comment">
+						<%= x.body %><br>
+					</div>
+				<%end%>	
+				<br>
 			</div>
-		<%end%>	
-		<br>
-	</div>
-	<h6>Add a comment:</h6>
-		<%= render 'comments/form' %>
-	<br>
-	<br>
-	<% i =i+1 %>
+			<h6>Add a comment:</h6>
+				<%= render 'comments/form' %>
+			<br>
+			<br>
+
+				
+		<%end%> 
+
 		
-<%end%> 
+
+	</body>
+</html>
 
 
-</body>
-<a href="log_out">Log out</a>
+

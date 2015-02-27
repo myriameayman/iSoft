@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/heroku/rails_serve_static_assets.git
+  revision: 5722be10da67ee94ab852ed72abea1628c05242c
+  specs:
+    rails_serve_static_assets (0.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -131,7 +137,6 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.3)
     railties (4.2.0)
       actionpack (= 4.2.0)
@@ -194,7 +199,7 @@ DEPENDENCIES
   pg
   rails (= 4.2.0)
   rails_12factor
-  rails_serve_static_assets
+  rails_serve_static_assets!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

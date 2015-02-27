@@ -49,6 +49,9 @@ group :development, :test do
   gem 'bootstrap-sass', '~> 3.3.3'
   gem 'autoprefixer-rails'
   
+  gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 
 
 

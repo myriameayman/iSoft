@@ -1,5 +1,7 @@
-
+require 'elasticsearch/model'
 class Article < ActiveRecord::Base
+	 include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
   has_many :comments, dependent: :destroy
   has_many :categories, :through => :links
   validates :title, presence: true,
@@ -7,6 +9,6 @@ class Article < ActiveRecord::Base
 
   belongs_to :user
 end
-
+Article.import
               
 

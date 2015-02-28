@@ -8,7 +8,7 @@ gem 'rails', '4.2.0'
 group :development, :test do
   gem 'sqlite3'
 end
-
+Bundler.require(*Rails.groups(assets: %w(development test production)))
 group :production do
   gem 'pg'
   gem 'rails_12factor'
